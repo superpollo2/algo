@@ -23,8 +23,8 @@ management:
       probes:
         enabled: true
 postgresql:
-  host: "your-database-host"
-  dbname: "comiiDB"
-  username: "postgres"
-  password: "your-password"
+  host: "http://192.168.30.30"
+  dbname: "midb"
+  username: "admin"
+  password: "admin123"
   port: 5432
