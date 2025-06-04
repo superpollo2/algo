@@ -1,4 +1,4 @@
-FROM gradle:7.4.1-jdk21 as build
+FROM eclipse-temurin:21-jdk-alpine as build
 LABEL authors="Laura"
 WORKDIR /app
 
@@ -12,7 +12,7 @@ COPY src ./src
 RUN gradle clean build -x test --no-daemon
 
 # Etapa de ejecución
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
 
 # Copiar el archivo JAR generado por Gradle
