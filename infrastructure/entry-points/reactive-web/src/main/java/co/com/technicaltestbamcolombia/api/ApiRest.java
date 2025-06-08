@@ -29,7 +29,6 @@ public class ApiRest {
         log.info("eso " + body);
         return Mono.just(body)
                 .doFirst(() -> log.info("Iniciando registro nuevo usuario"))
-                //.doOnNext(jsonSchemaValidator::validateWithJsonSchema)
                 .flatMap(apiRestService::newUser)
                 .doAfterTerminate(() ->
                         log.info("Finalización del request, " +
